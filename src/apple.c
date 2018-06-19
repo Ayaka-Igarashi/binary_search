@@ -11,10 +11,22 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-
-    while(){
+    int P[1000000000];
+    lb=0;
+    ub=1000000000;
     
+    int m =(lb+ub)/2;
+    for(i=0;i<n;i++){
+        int kosu;
+        if(A[i]%m==0){
+            kosu=(A[i]/m);
+        }else{
+            kosu =(A[i]/m)+1;
+        }
+        
+        
     }
 
+    
   return 0;
 }
