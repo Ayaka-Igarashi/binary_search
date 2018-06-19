@@ -4,9 +4,6 @@ int n;
 int k;
 int A[100000];
 
-int p(int m){
-    return (long long int)m*m >=n;
-}
 
 int main(){
   int i, lb, ub;
@@ -14,10 +11,12 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+    lb=0;
+    ub=n;
 
     while(ub-lb>1){
         int m=(lb+ub)/2;
-        if(p(m)){
+        if(A[m]>=k){
             ub=m;
         }
         else{
@@ -25,5 +24,6 @@ int main(){
         }
     }
 
+    printf("%d\n",ub);
   return 0;
 }

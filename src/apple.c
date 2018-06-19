@@ -12,7 +12,9 @@ int main(){
     scanf("%d", &A[i]);
   }
 
+    while(){
     
+    }
 
   return 0;
 }
