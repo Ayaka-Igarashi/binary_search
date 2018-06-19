@@ -11,7 +11,25 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+    lb=0;
+    ub=1000000000;
+    while(ub-lb>1){
+        int m=(lb+ub)/2;
+        
+        int kosu=0;
+        for(i=0;i<n;i++){
+            
+                kosu+=A[i]/m;
+                    }
+        
+        if(kosu>=k){
+            lb=m;
+        }else{
+            ub=m;
+        }
+        
+    }
 
-
+    printf("%d\n",lb);
   return 0;
 }
