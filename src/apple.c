@@ -11,22 +11,29 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-    int P[1000000000];
+    
     lb=0;
     ub=1000000000;
     
+while(ub-lb>1){
+    
     int m =(lb+ub)/2;
+    int kosu=0;//bagが必要な数
     for(i=0;i<n;i++){
-        int kosu;
         if(A[i]%m==0){
-            kosu=(A[i]/m);
+            kosu=kosu+(A[i]/m);
         }else{
-            kosu =(A[i]/m)+1;
+            kosu=kosu+(A[i]/m)+1;
         }
         
-        
     }
-
-    
+    if(kosu>k){
+        lb=m;
+    }else{
+        ub=m;
+    }
+        
+}
+    printf("%d\n",ub);
   return 0;
 }
