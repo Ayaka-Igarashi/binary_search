@@ -4,6 +4,9 @@ int n;
 int k;
 int A[100000];
 
+int p(int m){
+    return (long long int)m*m >=n;
+}
 
 int main(){
   int i, lb, ub;
@@ -12,7 +15,16 @@ int main(){
     scanf("%d", &A[i]);
   }
 
-
+    while(ub-lb>1){
+        int m=(lb+ub)/2;
+        if(p(m)){
+            ub=m;
+        }
+        else{
+            lb=m;
+        }
+    }
 
   return 0;
 }
+//koma
