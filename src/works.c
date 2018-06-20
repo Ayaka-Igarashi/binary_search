@@ -18,7 +18,7 @@ int main(){
     
     while(ub-lb>1){
         int m= (lb+ub)/2;
-    //
+    
         int zikan=0;
         int hito=0;
         int i2=0;
@@ -38,7 +38,7 @@ int main(){
             }
         }
         
-     //
+     
         
         if(i2<n){
             lb=m;
