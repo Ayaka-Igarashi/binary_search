@@ -4,24 +4,6 @@ int n;
 int k;
 int A[100000];
 
-int p(int m){
-    int zikan=0;
-    int hito=0;
-    int i2=0;
-    
-    while(hito<k){
-    while(zikan<m){
-    
-        zikan+=A[i2];
-        i2+=1;
-        
-        if(i2==n){return 1;}
-    }
-    hito+=1;
-    zikan=0;
-    }
-    if(hito<n-1){return 0;}
-}
 
 
 int main(){
@@ -40,23 +22,25 @@ int main(){
         int zikan=0;
         int hito=0;
         int i2=0;
-        int a=0;
         
         while(hito<k&&i2<n){
-            while(zikan<m){
-                
-                zikan+=A[i2];
-                i2+=1;
-                
-                if(i2==n)a=1; break;
+            while(zikan<=m&&i2<n){
+                if(zikan+A[i2]<=m){
+                    zikan=zikan+A[i2];
+                    i2=i2+1;
+                }else{
+                    break;
+                }
             }
-            hito+=1;
-            zikan=0;
+            if(i2<n){
+                hito+=1;
+                zikan=0;
+            }
         }
-        if(hito<n-1)a=0;
+        
      //
         
-        if(a==0){
+        if(i2<n){
             lb=m;
         }else{
             ub=m;
@@ -64,7 +48,7 @@ int main(){
     
     }
     
-    printf("%d\n",lb);
+    printf("%d\n",ub);
 
   return 0;
 }
